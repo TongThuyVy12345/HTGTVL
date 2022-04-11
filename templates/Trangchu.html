@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Trang chủ{% endblock %}
+
+{% block content %}
+    <h1 id="chaomung">CHÀO MỪNG BẠN ĐẾN VỚI TRANG HỔ TRỢ TÌM VIỆC CỦA CHÚNG TÔI</h1>
+    <section class="container">
+        <form method="get" action="{{ url_for('timviec')}}">
+            <div class="form-group">
+                <label>Hãi điền vào những thông tin xin việc của bạn</label>
+                <label>(học tập, kinh nghiệm làm việc, thế mạnh, sở thích,...)</label>
+                {% if thongbao %}
+                    <p id="ThongBao"> bạn phù hợp với ngành: {{thongbao}}</p>
+                {% endif %}
+                <textarea rows="4" cols="20" class="form-control" id="mota" name="mota" required></textarea>
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+        </form>
+    </section>
+
+{% endblock %}
